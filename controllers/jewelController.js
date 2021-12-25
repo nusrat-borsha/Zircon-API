@@ -25,7 +25,7 @@ exports.getAllJewels = async (req, res) => {
 
   try{
 
-    const features = new APIFeatures(Jewel.find(), req.query).filter();
+    const features = new APIFeatures(Jewel.find(), req.query).filter().sort();
     const jewels = await features.query;
    
     // send query
