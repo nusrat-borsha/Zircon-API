@@ -1,0 +1,365 @@
+[
+    {
+    
+      "name": "Bling bling ring",
+      "price": 35.0,
+      "units": 50,
+      "category": "ring",
+      "material": "silver",
+      "picture": "ring-1.jpg",
+      "description": "A beautiful ring made with silver and engraved with zircon stones all over.",
+      "length": 16
+    },
+    {
+     
+      "name": "Blanco ring",
+      "price": 55.0,
+      "units": 20,
+      "category": "ring",
+      "description": "A beautiful ring made with silver and engraved with white stones.",
+      "material": "silver",
+      "picture": "ring-2.jpg",
+      "length": 17
+    },
+    {
+    
+      "name": "Mila ring",
+      "price": 33.0,
+      "units": 20,
+      "category": "ring",
+      "description": "A beautiful ring made with silver and engraved with white stones creating a stunning flower shape.",
+      "material": "silver",
+      "picture": "ring-3.jpg",
+      "length": 16
+    },
+  {
+     
+      "name": "Fushcia ring",
+      "price": 60.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with silver and engraved with purple and zircon stones.",
+      "material": "silver",
+      "picture": "ring-4.jpg",
+      "length": 17
+    },
+   {
+      "name": "Dot ring",
+      "price": 25.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with silver and engraved with purple and zircon stones.",
+      "material": "silver",
+      "picture": "ring-5.jpg",
+      "length": 17
+    },
+    {
+     
+      "name": "Folia ring",
+      "price": 30.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with 18k gold with eye-catching leaf patterns.",
+      "material": "gold",
+      "picture": "ring-6.jpg",
+      "length": 17
+    },
+     {
+     
+      "name": "Cross ring",
+      "price": 40.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with 18k gold with a stunning design.",
+      "material": "gold",
+      "picture": "ring-7.jpg",
+      "length": 18
+    },
+    {
+     
+      "name": "Zirgold ring",
+      "price": 120.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with 18k gold and zircon stones.",
+      "material": "gold",
+      "picture": "ring-8.jpg",
+      "length": 17
+    },
+    {
+    
+      "name": "Wave ring",
+      "price": 80.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with 18k gold and purple stones.",
+      "material": "gold",
+      "picture": "ring-9.jpg",
+      "length": 17
+    },
+    {
+      
+      "name": "Royal ring",
+      "price": 100.0,
+      "units": 60,
+      "category": "ring",
+      "description": "A beautiful ring made with 18k gold and zircon stones along with stunning patterns.",
+      "material": "gold",
+      "picture": "ring-10.jpg",
+      "length": 17
+    },
+    {
+    
+      "name": "Love necklace",
+      "price": 30.0,
+      "units": 70,
+      "category": "necklace",
+      "description": "A beautiful necklace made with silver having a heart shaped locket.",
+      "material": "silver",
+      "picture": "necklace-1.jpg",
+      "length": 17
+    },
+      {
+     
+      "name": "Tetra necklace",
+      "price": 30.0,
+      "units": 30,
+      "category": "necklace",
+      "description": "A beautiful necklace made with silver having a square shaped locket.",
+      "material": "silver",
+      "picture": "necklace-2.jpg",
+      "length": 17
+    },
+     {
+     
+      "name": "Clover necklace",
+      "price": 75.0,
+      "units": 20,
+      "category": "necklace",
+      "description": "A beautiful necklace made with 18k gold having a four leaf clover shaped locket.",
+      "material": "gold",
+      "picture": "necklace-3.jpg",
+      "length": 17
+    },
+     {
+   
+      "name": "Letter necklace",
+      "price": 85.0,
+      "units": 50,
+      "category": "necklace",
+      "description": "A beautiful necklace made with 18k gold having letters engraved in it.",
+      "material": "gold",
+      "picture": "necklace-4.jpg",
+      "length": 17
+    },
+     {
+    
+      "name": "Silver letter necklace",
+      "price": 85.0,
+      "units": 50,
+      "category": "necklace",
+      "description": "A beautiful necklace made with silver having letters engraved in it.",
+      "material": "silver",
+      "picture": "necklace-5.jpg",
+      "length": 17
+    },
+      {
+     
+      "name": "Blulove necklace",
+      "price": 80.0,
+      "units": 50,
+      "category": "necklace",
+      "description": "A beautiful necklace made with silver and blue crystals.",
+      "material": "silver",
+      "picture": "necklace-6.jpg",
+      "length": 17
+    },
+  
+    {
+      
+      "name": "Root necklace",
+      "price": 36.0,
+      "units": 50,
+      "category": "necklace",
+      "description": "A beautiful necklace made with silver.",
+      "material": "silver",
+      "picture": "necklace-7.jpg",
+      "length": 17
+    },
+    {
+     
+      "name": "Ball necklace",
+      "price": 70.0,
+      "units": 50,
+      "category": "necklace",
+      "description": "A beautiful necklace made with 18k gold.",
+      "material": "gold",
+      "picture": "necklace-8.jpg",
+      "length": 17
+    },
+     {
+     
+      "name": "Imisy necklace",
+      "price": 40.0,
+      "units": 50,
+      "category": "necklace",
+      "description": "A beautiful necklace made with 18k gold.",
+      "material": "gold",
+      "picture": "necklace-9.jpg",
+      "length": 17
+    },
+     {
+   
+      "name": "Eidis necklace",
+      "price": 50.0,
+      "units": 30,
+      "category": "necklace",
+      "description": "A beautiful necklace made with silver.",
+      "material": "silver",
+      "picture": "necklace-10.jpg",
+      "length": 17
+    },
+     {
+    
+      "name": "Plus bracelet",
+      "price": 30.0,
+      "units": 30,
+      "category": "bracelet",
+      "description": "A beautiful bracelet made with silver.",
+      "material": "silver",
+      "picture": "bracelet-1.jpg",
+      "length": 17
+     },
+     {
+      
+      "name": "Alis bracelet",
+      "price": 90.0,
+      "units": 30,
+      "category": "bracelet",
+      "description": "A beautiful bracelet made with silver.",
+      "material": "silver",
+      "picture": "bracelet-2.jpg",
+      "length": 17
+    },
+    {
+      
+      "name": "Mavros bracelet",
+      "price": 80.0,
+      "units": 60,
+      "category": "bracelet",
+      "description": "A beautiful bracelet made with gold.",
+      "material": "gold",
+      "picture": "bracelet-3.jpg",
+      "length": 17
+    },
+     {
+      
+      "name": "Kymatis bracelet",
+      "price": 100.0,
+      "units": 60,
+      "category": "bracelet",
+      "description": "A beautiful bracelet made with gold and zircon stones.",
+      "material": "gold",
+      "picture": "bracelet-4.jpg",
+      "length": 17
+    },
+     {
+      
+      "name": "Trygo bracelet",
+      "price": 70.0,
+      "units": 60,
+      "category": "bracelet",
+      "description": "A beautiful bracelet made with gold and zircon stones.",
+      "material": "gold",
+      "picture": "bracelet-5.jpg",
+      "length": 17
+    },
+     {
+     
+      "name": "Heart bracelet",
+      "price": 40.0,
+      "units": 30,
+      "category": "bracelet",
+      "description": "A beautiful bracelet made with gold and zircon stones.",
+      "material": "gold",
+      "picture": "bracelet-6.jpg",
+      "length": 17
+    },
+    {
+     
+      "name": "Stripe earring",
+      "price": 40.0,
+      "units": 30,
+      "category": "earring",
+      "description": "A beautiful earring made with gold and zircon stones.",
+      "material": "gold",
+      "picture": "earring-1.jpg",
+      "length": 7
+    },
+    {
+      
+      "name": "Star earring",
+      "price": 60.0,
+      "units": 30,
+      "category": "earring",
+      "description": "A beautiful earring made with gold having start shaped design.",
+      "material": "gold",
+      "picture": "earring-2.jpg",
+      "length": 7
+    },
+    {
+     
+      "name": "Kitrino earring",
+      "price": 70.0,
+      "units": 30,
+      "category": "earring",
+      "description": "A beautiful earring made with gold and yellow stones.",
+      "material": "gold",
+      "picture": "earring-3.jpg",
+      "length": 7
+    },
+    {
+      
+      "name": "Curl earring",
+      "price": 30.0,
+      "units": 20,
+      "category": "earring",
+      "description": "A beautiful earring made with gold.",
+      "material": "gold",
+      "picture": "earring-4.jpg",
+      "length": 6
+    },
+    {
+      
+      "name": "Starsquare earring",
+      "price": 50.0,
+      "units": 30,
+      "category": "earring",
+      "description": "A beautiful earring made with silver and stunning white beads.",
+      "material": "silver",
+      "picture": "earring-5.jpg",
+      "length": 7
+    },
+     {
+    
+      "name": "Curtain earring",
+      "price": 60.0,
+      "units": 20,
+      "category": "earring",
+      "description": "A beautiful earring made with gold.",
+      "material": "gold",
+      "picture": "earring-6.jpg",
+      "length": 9
+    },
+    {
+     
+      "name": "Kiklos earring",
+      "price": 80.0,
+      "units": 30,
+      "category": "earring",
+      "description": "A beautiful earring made with silver and stunning zircon stones.",
+      "material": "silver",
+      "picture": "earring-7.jpg",
+      "length": 6
+    }
+  ]
