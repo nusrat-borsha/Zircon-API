@@ -1,6 +1,6 @@
 //handlers go in this file
 const Jewel = require('../models/jewelModel'); 
-const APIFeatures = require('../utils/apiFeatures');
+const APIFeatures = require('./../utils/apiFeatures');
 
 exports.createJewels = async (req, res) => {
 

@@ -14,5 +14,4 @@ router
   .patch(jewelController.updateJewel)
   .delete(jewelController.deleteJewel);
 
-
 module.exports = router;
