@@ -25,12 +25,13 @@ exports.getAllJewels = async (req, res) => {
 
   try{
 
-    const features = new APIFeatures(Jewel.find(), req.query).filter().sort();
+    const features = new APIFeatures(Jewel.find(), req.query).filter().sort().limitFields().paginate();
     const jewels = await features.query;
    
     // send query
     res.status(200).json({
       status : 'success',
+      results: jewels.length,
       data: {
         jewels
       }
@@ -121,3 +122,4 @@ exports.deleteJewel = async (req, res) => {
       });
     }
     };
+

@@ -9,8 +9,6 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', jewelRouter);
-app.use('/api/v1/:id', jewelRouter);
-app.use('/api/v1/all-collections/:category', jewelRouter);
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')));
