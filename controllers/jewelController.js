@@ -1,10 +1,11 @@
 //handlers go in this file
 const Jewel = require('../models/jewelModel'); 
 const APIFeatures = require('./../utils/apiFeatures');
+const catchAsync = require('./../utils/catchAsync');
+const AppError = require('./../utils/appError');
 
-exports.createJewels = async (req, res) => {
+exports.createJewels = catchAsync(async (req, res, next) => {
 
-try{
   const newJewel = await Jewel.create(req.body);
 
   res.status(201).json({
@@ -13,22 +14,13 @@ try{
       jewel : newJewel
     }
   });
-} catch(err){
-  res.status(400).json({
-    status : 'fail',
-    message : 'Invalid data sent'
-  });
-}
-};
+});
 
-exports.getAllJewels = async (req, res) => {
-
-  try{
+exports.getAllJewels = catchAsync(async (req, res, next) => {
 
     const features = new APIFeatures(Jewel.find(), req.query).filter().sort().limitFields().paginate();
     const jewels = await features.query;
-   
-    // send query
+ 
     res.status(200).json({
       status : 'success',
       results: jewels.length,
@@ -36,18 +28,15 @@ exports.getAllJewels = async (req, res) => {
         jewels
       }
     });
-  } catch(err){
-    res.status(404).json({
-      status : 'fail',
-      message : err
-    });
-  }
-  };
+  });
 
-exports.getJewel = async (req, res) => {
+exports.getJewel = catchAsync(async (req, res, next) => {
 
-  try{
     const jewel = await Jewel.findById(req.params.id);
+
+    if(!jewel){
+      return next(new AppError(`No Jewel found with that ID`, 404));
+    };
   
     res.status(201).json({
       status : 'success',
@@ -55,21 +44,18 @@ exports.getJewel = async (req, res) => {
         jewel
       }
     });
-  } catch(err){
-    res.status(404).json({
-      status : 'fail',
-      message : err
-    });
-  }
-  };
+  });
 
-exports.updateJewel = async (req, res) => {
+exports.updateJewel = catchAsync(async (req, res, next) => {
 
-  try{
     const jewel = await Jewel.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators : true,
     });
+
+    if(!jewel){
+      return next(new AppError(`No Jewel found with that ID`, 404));
+    };
   
     res.status(201).json({
       status : 'success',
@@ -77,49 +63,18 @@ exports.updateJewel = async (req, res) => {
         jewel 
       } 
     });
-  } catch(err){
-    res.status(400).json({
-      status : 'fail',
-      message : err
-    });
-  }
-  };
+  });
 
-exports.deleteJewel = async (req, res) => {
+exports.deleteJewel = catchAsync(async (req, res, next) => {
 
-  try{
     const jewel = await Jewel.findByIdAndDelete(req.params.id);
-    // if (!jewel) {
-    //   return new AppError('No jewelry found with that ID', 404);
-    // }
+
+    if(!jewel){
+      return next(new AppError(`No Jewel found with that ID`, 404));
+    };
     res.status(204).json({
       status : success,
       data: null
     });
-  } catch(err){
-    res.status(400).json({
-      status : "fail",
-      message : err
-    });
-  }
-  };
-
-  exports.getJewelByCategory = async (req, res) => {
-
-    try{
-      const jewels = await Jewel.find({category: req.params.category});
-    
-      res.status(201).json({
-        status : 'success',
-        data: {
-          jewels
-        }
-      });
-    } catch(err){
-      res.status(404).json({
-        status : 'fail',
-        message : err
-      });
-    }
-    };
+  });
 

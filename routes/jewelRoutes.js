@@ -9,7 +9,7 @@ router
   .post(jewelController.createJewels);
 
 router
-  .route('/:id')
+  .route('/api/v1/collections/:id')
   .get(jewelController.getJewel)
   .patch(jewelController.updateJewel)
   .delete(jewelController.deleteJewel);
