@@ -9,7 +9,7 @@ exports.createJewels = catchAsync(async (req, res, next) => {
   const newJewel = await Jewel.create(req.body);
 
   res.status(201).json({
-    status : success,
+    status : 'success',
     data: {
       jewel : newJewel
     }
@@ -74,7 +74,7 @@ exports.deleteJewel = catchAsync(async (req, res, next) => {
     };
     
     res.status(204).json({
-      status : success,
+      status : 'success',
       data: null
     });
   });

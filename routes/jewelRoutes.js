@@ -7,12 +7,12 @@ const router = express.Router();
 router
   .route('/') 
   .get(jewelController.getAllJewels)
-  .post(jewelController.createJewels);
+  .post(authController.protect, jewelController.createJewels);
 
 router
   .route('/:id')
   .get(jewelController.getJewel)
-  .patch(jewelController.updateJewel)
-  .delete(jewelController.deleteJewel);
+  .patch(authController.protect, jewelController.updateJewel)
+  .delete(authController.protect, jewelController.deleteJewel);
 
 module.exports = router;
