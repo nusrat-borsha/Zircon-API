@@ -59,9 +59,10 @@ userSchema.pre('save', async function(next) {
   next();
 });
 
+//saving password changed time to db
 userSchema.pre('save', function(next) {
   if (!this.isModified('password') || this.isNew) return next();
-  this.passwordChangedAt = Date.now() - 1000;
+  this.passwordChangedAt = Date.now() - 1000; //subtracting 1 sec from current time
   next();
 });
 
