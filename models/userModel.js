@@ -66,6 +66,13 @@ userSchema.pre('save', function(next) {
   next();
 });
 
+//saving password changed time to db
+userSchema.pre(/^find/, function(next) {
+  //only find users with active property to true and NOT false
+  this.find({active: {$ne: false}})
+  next();
+});
+
 userSchema.methods.correctPassword = async function(candidatePassword, userPassword){
   let isValid = await bcrypt.compare(candidatePassword, userPassword);
   return isValid;
