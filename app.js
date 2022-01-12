@@ -1,13 +1,30 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const mongoSanitizer = require('express-mongo-sanitize');
+const rateLimit = require('express-rate-limit');
 const app = express();
 const jewelRouter = require('./routes/jewelRoutes');
 const userRouter = require('./routes/userRoutes');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 
-app.use(express.json());
+app.use(helmet);
+
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: "Too many requests from this IP. Please again later."
+});
+
+app.use('/api', limiter);
+
+app.use(express.json({limit: '10kb'}));
+app.use(mongoSanitizer());
+app.use(xss());
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
