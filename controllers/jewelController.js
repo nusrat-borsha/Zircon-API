@@ -3,6 +3,37 @@ const Jewel = require('../models/jewelModel');
 const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
+const multer = require('multer');
+const sharp = require('sharp');
+
+const multerStorage = multer.memoryStorage();
+
+const multerFilter = (req, file, cb) => {
+  if(file.mimetype.startsWith('image')){
+    cb(null, true);
+  }else{
+    cb(new AppError('Only images are allowed to be uploaded.', 400), false);
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter
+});
+
+exports.resizeJewelImages = catchAsync(async (req, res, next) => {
+  if (!req.files.picture) return next();
+
+  req.body.picture = `jewel-${req.params.id}-${Date.now()}-cover.jpeg`;
+  await sharp(req.files.picture[0].buffer)
+    .resize(500, 503)
+    .toFormat('jpeg')
+    .jpeg({ quality: 90 })
+    .toFile(`public/img/jewels/${req.body.picture}`);
+  next();
+});
+
+exports.uploadjewelImage = upload.single('picture');
 
 exports.createJewels = catchAsync(async (req, res, next) => {
 
@@ -78,4 +109,6 @@ exports.deleteJewel = catchAsync(async (req, res, next) => {
       data: null
     });
   });
+
+
 

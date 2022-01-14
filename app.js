@@ -5,11 +5,11 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const mongoSanitizer = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
-const app = express();
 const jewelRouter = require('./routes/jewelRoutes');
 const userRouter = require('./routes/userRoutes');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
+const app = express();
 
 app.use(helmet);
 

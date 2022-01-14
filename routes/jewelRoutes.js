@@ -8,7 +8,7 @@ const router = express.Router();
 router
   .route('/') 
   .get(jewelController.getAllJewels)
-  .post(authController.protect, authController.restrictTo('admin'), jewelController.createJewels);
+  .post(authController.protect, authController.restrictTo('admin'), jewelController.uploadjewelImage, jewelController.createJewels);
 
 router
   .route('/:id')
