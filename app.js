@@ -7,6 +7,7 @@ const mongoSanitizer = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
 const jewelRouter = require('./routes/jewelRoutes');
 const userRouter = require('./routes/userRoutes');
+const cartRouter = require('./routes/cartRoutes');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const app = express();
@@ -30,6 +31,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use('/api/v1/collections', jewelRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/cart', cartRouter);
 app.all('*', (req, res, next)=>{
   next(new AppError(`Cant find ${req.originalUrl}`, 404));
 })
