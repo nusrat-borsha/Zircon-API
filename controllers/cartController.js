@@ -71,6 +71,54 @@ exports.addToCart = catchAsync(async (req, res, next) => {
         }
 });
 
+exports.deleteItemCart = catchAsync(async (req, res, next) => {
+
+  const user = await User.findById(req.user.id);
+  const item = await Jewel.findById(req.params.productId);
+  let cart = await Cart.findOne({ user });
+
+  if(!user || !cart){
+    return next(
+      new AppError(`Cart does not exist.`, 404)
+    );
+  }
+  if (cart) {
+      //cart exists for user
+      let itemIndex = cart.products.findIndex(p => p.product.toString() == item._id.toString());
+
+      if (itemIndex > -1) {
+        const quantityOfItem = cart.products[itemIndex].quantity;
+        cart.totalPrice -= (item.price*quantityOfItem);
+        
+        //if cart empty after item deletion, then delete cart
+        if(cart.products.length == 1){
+          await cart.deleteOne({ products: { product: item._id }});
+
+          res.status(200).json({
+            status : 'success',
+          });
+        }
+        else{
+        await cart.updateOne({ $set: {totalPrice : cart.totalPrice}} );
+        cart = await cart.updateOne( { $pull: { products: { product: item._id }}});
+
+        //cart = await cart.save();
+        res.status(200).json({
+            status : 'success',
+            data: {
+              cart
+            }
+          });
+        }
+
+      } else {
+        return next(
+          new AppError(`Product is not in cart.`, 404)
+        );  
+      }
+    } 
+});
+
 // exports.createUpdateCart = catchAsync(async (req, res, next) => {
 
 //     const user = await User.findById(req.user.id);

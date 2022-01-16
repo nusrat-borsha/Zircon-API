@@ -5,7 +5,9 @@ const cartController = require('../controllers/cartController');
 
 const router = express.Router();
 
-router.post('/:productId', authController.protect, cartController.addToCart);
+router.route('/:productId')
+      .post(authController.protect, cartController.addToCart)
+      .patch(authController.protect, cartController.deleteItemCart);
 //router.get('/checkout-session/:jewelID', cartController.getCheckoutSession);
 
 router
