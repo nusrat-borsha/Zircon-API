@@ -119,6 +119,25 @@ exports.deleteItemCart = catchAsync(async (req, res, next) => {
     } 
 });
 
+exports.getCart = catchAsync(async (req, res, next) => {
+
+  const user = await User.findById(req.user.id);
+  let cart = await Cart.findOne({ user });
+
+  if(!user || !cart){
+    return next(
+      new AppError(`Cart does not exist.`, 404)
+    );
+  }
+  
+  res.status(200).json({
+    status : 'success',
+    data : {
+      cart
+    }
+  });
+})
+
 // exports.createUpdateCart = catchAsync(async (req, res, next) => {
 
 //     const user = await User.findById(req.user.id);
