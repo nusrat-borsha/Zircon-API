@@ -12,7 +12,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const app = express();
 
-app.use(helmet);
+app.use(helmet());
 
 const limiter = rateLimit({
   max: 100,

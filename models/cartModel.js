@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema(
   {
-    tour: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Jewel',
-        required: [true, 'Cart must contain a jewelry!']
-      },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
@@ -14,15 +9,19 @@ const cartSchema = new mongoose.Schema(
     },
     products: [
       {
-        productId: Number,
+        product: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Jewel',
+          },
         quantity: Number,
         name: String,
         price: Number
       }
     ],
+    totalPrice: Number,
     paid: {
         type: Boolean,
-        default: true
+        default: false
       }
   },
   { timestamps: true }
