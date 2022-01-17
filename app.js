@@ -6,6 +6,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const mongoSanitizer = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
+const compression = require('compression');
 const jewelRouter = require('./routes/jewelRoutes');
 const userRouter = require('./routes/userRoutes');
 const cartRouter = require('./routes/cartRoutes');
@@ -31,6 +32,8 @@ app.use(hpp({
     'price'
   ]
 }));
+
+app.use(compression());
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
