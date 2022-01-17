@@ -6,8 +6,7 @@ const AppError = require('./../utils/appError');
 const multer = require('multer');
 const sharp = require('sharp');
 
-//upload image functionality
-
+//upload image 
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
@@ -37,7 +36,7 @@ exports.resizeJewelImages = catchAsync(async (req, res, next) => {
 
 exports.uploadjewelImage = upload.single('picture');
 
-// create new jewel functionality
+// create new jewel 
 exports.createJewels = catchAsync(async (req, res, next) => {
 
   const newJewel = await Jewel.create(req.body);

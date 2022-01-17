@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const xss = require('xss-clean');
+const hpp = require('hpp');
 const mongoSanitizer = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
 const jewelRouter = require('./routes/jewelRoutes');
@@ -25,6 +26,11 @@ app.use('/api', limiter);
 app.use(express.json({limit: '10kb'}));
 app.use(mongoSanitizer());
 app.use(xss());
+app.use(hpp({
+  whitelist: [
+    'price'
+  ]
+}));
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));

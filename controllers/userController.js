@@ -25,6 +25,39 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
     });
 });
 
+//not the route for password change! Only other user data change is allowed
+exports.updateUser = catchAsync(async (req, res, next) => {
+
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+        runValidators : true,
+      });
+  
+      if(!user){
+        return next(new AppError(`No user found with that ID`, 404));
+      };
+    
+      res.status(201).json({
+        status : 'success',
+        data: {
+          user
+        } 
+      });
+});
+
+exports.deleteUser = catchAsync(async (req, res, next) => {
+    const user = await User.findByIdAndDelete(req.params.id);
+
+    if(!user){
+      return next(new AppError(`No user found with that ID`, 404));
+    };
+    
+    res.status(204).json({
+      status : 'success',
+      data: null
+    });
+});
+
 //update current user's data
 exports.updateMyData = catchAsync(async (req, res, next) => {
 
@@ -49,7 +82,7 @@ exports.updateMyData = catchAsync(async (req, res, next) => {
     });
 });
 
-//delete current user
+//delete current user (only deactivate but does not remove from DB)
 exports.deleteMe = catchAsync(async (req, res, next) => {
     await User.findByIdAndUpdate(req.user.id, {active : false})
 

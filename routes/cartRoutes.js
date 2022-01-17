@@ -1,5 +1,4 @@
 const express = require('express');
-const jewelController = require('../controllers/jewelController');
 const authController = require('../controllers/authController');
 const cartController = require('../controllers/cartController');
 
