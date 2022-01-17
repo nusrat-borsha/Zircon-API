@@ -9,10 +9,7 @@ process.on('uncaughtException', err => {
 });
 
 const DB = process.env.DATABASE.replace('<PASSWORD>',process.env.DATABASE_PASSWORD);
-mongoose.connect(DB,{
-  useNewUrlParser : true,
-  useUnifiedTopology: true,
-}).then(()=> {
+mongoose.connect(DB,{}).then(()=> {
   console.log("DB connection successful") 
 });
 
