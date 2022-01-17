@@ -3,4 +3,4 @@
 
 Zircon API is an API for online jewelry store. 
 
-The documentation of the API is available here --> [Zircon API](https://documenter.getpostman.com/view/10487555/UVXknEnw)
+The documentation for the API is available here --> [Zircon API](https://documenter.getpostman.com/view/10487555/UVXknEnw)
